@@ -1,0 +1,12 @@
+@mixin box ($w, $h, $r, $c) {
+    width: $w;
+    height: $h;
+    border-radius: $r;
+    background-color: $c;
+}
+@mixin idea-box ($cs, $ce, $rs, $re) {
+    grid-column-start: $cs;
+    grid-column-end: $ce;
+    grid-row-start: $rs;
+    grid-row-end: $re;
+}

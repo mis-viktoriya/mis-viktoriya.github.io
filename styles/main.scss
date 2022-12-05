@@ -1,0 +1,604 @@
+@import 'base/reset';
+@import 'base/variables';
+@import 'base/mixin';
+@import 'base/fonts';
+
+.main-width {
+   width: 940px;
+   margin: 0 auto;
+   max-width: calc(100% - 20px);
+}
+header {
+   width: 100%;
+   height: 700px;
+   padding: 39px 0;
+   margin-bottom: 91px;
+   background: {
+      image: url('../images/Background.png');
+      size: cover;
+      repeat: no-repeat;
+      position: center;
+   }
+}
+%links {
+      font-family: $main-font-family;
+      color: $main-color;
+      }
+%links_thin {
+   font-family: $second-font-family;
+   color: $main-color;
+   }     
+.conteiner {
+   display: flex;
+   justify-content: space-between;
+}
+.logo{
+   margin-top: 10px;
+      &__link{
+         @extend %links;
+         font-size: 20px;
+   }
+}
+.autorization {
+   &__login{
+      @extend %links_thin;
+      font-size: 14px;
+      margin-right: 14px;
+   }
+   &__signup{
+      @extend %links_thin;
+      @include box(90px, 36px, 40px, transparent);
+      font-size: 14px;
+      margin-right: 42px;
+      border: 2px solid $main-color;
+      line-height: 36px;
+      display: inline-block;
+      text-align: center;
+   }
+}
+.top-content {
+   width: 66%;
+   height: 36%;
+   margin: 152px auto;
+   text-align: center;
+
+   &__title {
+      font: {
+         family: $main-font-family;
+         size: 52px;
+      }
+      color: $main-color;
+      margin-top: -2px;
+      margin-bottom: 31px;
+      line-height: 61px;
+  }
+  &__description {
+   font: {
+      family: $thin-font-family;
+      size: 24px;
+   }
+   color: #F7F3F2;
+   letter-spacing: 0px;
+   margin-bottom: 33px;
+  }
+  &__link {
+      font: {
+         family: $main-font-family;
+         size: 14px;
+      }
+      @include box(225px, 40px, 40px, $main-backgraund-color);
+      color: $main-color;
+      line-height: 40px;
+      display: inline-block;
+      text-align: center;
+   }
+}
+%title {
+   font-size: 26px;
+   line-height: 26px;
+   font-family: $main-font-family;
+   color: $main-dark-color;
+   text-align: center;
+   margin-bottom: 39px;
+}
+.main_title {
+   @extend %title;
+}
+.steps {
+ display: flex;
+ justify-content: space-between;
+ margin-bottom: 92px;
+}
+.blok-step{
+   width: calc(100% / 3 - 40px / 3);
+   height: 400px;
+   padding: 20px 25px;
+   display: flex;
+   flex-direction: column;
+   justify-content: end;
+   position: relative;
+   &__img {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 4px;
+   }
+   &__ikon {
+      font: {
+         family: $second-font-family;
+         size: 10px;
+      }
+      @include box(70px, 20px, 40px, $main-backgraund-color);
+      color: $main-color;
+      line-height: 20px;
+      letter-spacing: 2px;
+      text-align: center;
+      position: relative;
+      margin-bottom: 23px;
+   }
+   &__ikon-centr {
+      font: {
+         family: $second-font-family;
+         size: 10px;
+      }
+      @include box(70px, 20px, 40px, $main-backgraund-color);
+      color: $main-color;
+      line-height: 20px;
+      letter-spacing: 2px;
+      text-align: center;
+      position: relative;
+      margin-bottom: 20px;
+   }
+   &__title {
+      font: {
+         family: $main-font-family;
+         size: 24px;
+      }
+      color: $main-color;
+      position: relative;
+   }
+   &__deskription {
+      font: {
+         family: $thin-font-family;
+         size: 14px;
+      }
+      color: #E3E3E3;
+      position: relative;
+      margin-top: 26px;
+   }
+}
+.partners {
+   &__wrapper {
+      display: flex;
+      justify-content: space-between;
+   }
+   &__all-partners {
+      font: {
+         family: $main-font-family;
+         size: 14px;
+      }
+      @include box(180px, 40px, 40px, transparent);
+      color: $second-color;
+      line-height: 40px;
+      text-align: center;
+      border: 2px solid $second-color;
+      margin: 34px auto 91px;
+   }
+}
+  
+.partner-blok{
+   width: calc(100% / 4 - 60px / 4);
+   height: 225px;
+   text-align: center;
+   &__name {
+      font: {
+         family: $main-font-family;
+         size: 14px;
+       }
+   color: $main-dark-color;
+   margin-top: 16px;
+   margin-bottom: 25px;
+   }  
+   &__description {
+   font: {
+      family: $thin-font-family;
+      size: 14px;
+      }
+   color: #666666;
+   }
+}
+%ideas-content {
+   border-radius: 4px;
+   text-align: center;
+   color: $main-color;
+   line-height: 310px;
+   font: {
+      family: $main-font-family;
+      size: 22px;
+   }
+}
+.ideas {
+   display: grid;
+   grid-template-columns: 1fr 1fr 1fr;
+   grid-template-rows: 310px 310px 310px;
+   gap: 20px;
+   margin-bottom: 92px;
+   & >* {
+      @extend %ideas-content;
+      background: {
+         size: cover;
+         repeat: no-repeat;
+         position: center;
+      }
+   }
+   &__sports {
+      @include idea-box(1, 2, 1, 2);
+      background-image: url('../images/Sport.png');
+   }
+   &__heals {
+      @include idea-box(2, 3, 1, 2);
+      background-image: url('../images/Healath.png');
+   }
+   &__extreme {
+      @include idea-box(3, 4, 1, 2);
+      background: {
+         image: url('../images/Extreme.png');
+         size: cover;
+         repeat: no-repeat;
+         position: center;
+      }
+      color: $main-color;
+      padding: 130px 50px;
+      line-height: 26px;
+      border-radius: 4px;
+      text-align: center;
+      font: {
+         family: $main-font-family;
+         size: 22px;
+      }
+   }
+   &__games {
+      @include idea-box(1, 2, 2, 3);
+      background-image: url('../images/Games.png');
+   }
+   &__culture {
+      @include idea-box(2, 4, 2, 3);
+      background-image: url('../images/Culture.png');
+   }
+   &__enjoi {
+      @include idea-box(1, 3, 3, 4);
+      background-image: url('../images/Enjomet.png');
+   }
+   &__trevelling {
+      @include idea-box(3, 4, 3, 4);
+      background-image: url('../images/Traveling.png');
+   }
+}
+.form {
+   &__title {
+     font-family: $thin-font-family;
+     font-size: 18px; 
+     text-align: center;
+     display: block;
+     margin-top: 53px;
+   }
+   .conteiner {
+      width: 482px;
+      height: 40px;
+      display: flex;
+      justify-content: space-between;
+      margin: 25px auto 100px;
+   }
+   &__search {
+      border: 1px solid #D4D4D4;
+      width: 299px;
+      height: 40px;
+      border-radius: 3px;
+      font-family: $thin-font-family;
+      font-size: 14px;
+      color: #999999;
+      padding-left: 15px;
+   }
+   &__button {
+      @include box(173px, 40px, 40px, $main-backgraund-color);
+      font: {
+         family: $main-font-family;
+         size: 14px;
+      }
+      color: $main-color;
+      padding-left: 30px;
+   }
+}
+footer {
+   border-top: 2px solid $main-backgraund-color;  
+}
+.footer-blok{
+   display: flex;
+   margin-top: 38px;
+   margin-bottom: 20px;
+   & >* {
+      width: 25%;
+   }  
+   &__logo{
+      font-family: $second-font-family;
+      font-size: 16px;
+      color: $second-color;
+   }
+   &__company{
+      p {
+         font-family: $main-font-family;
+         font-size: 14px;
+         color: $main-dark-color;
+         line-height: 17px;
+         margin-bottom: 10px;
+      }
+      li {
+         font-family: $thin-font-family;
+         font-size: 14px;
+         color: #999999;  
+         line-height: 26px;
+      }
+   }
+   &__partners{
+      font-family: $main-font-family;
+      font-size: 14px;
+      color: $main-dark-color;
+   }
+   &__developer{
+      text-align: right;
+      font-family: $main-font-family;
+      font-size: 10px;
+      letter-spacing: 1px;
+      line-height: 12px;
+      color: #CCCCCC;
+      img {
+         margin-top: 7px;
+      }
+   }
+}
+
+@media screen and (max-width: 900px){
+   header {
+      margin-bottom: 97px;
+   }
+   .logo{
+      margin-left: 38px;
+   }
+   .main_title {
+      font-size: 22px;
+      margin-bottom: 35px;
+   }
+   .blok-step{
+      padding: 15px 20px;
+      &__ikon {
+         margin-bottom: 44px;
+      }
+      &__ikon-centr {
+         margin-bottom: 9px;
+      }
+      &__title {
+         line-height: 14px;
+      }
+      &__img {
+         object-position: left;
+      }
+      &__deskription {
+         margin-top: 30px;
+      }
+   }
+   .partners {
+         &__wrapper {
+         display: flex;
+         padding: 0 20px;
+         flex-wrap: wrap;
+         justify-content: center;
+      }
+      &__all-partners {
+         margin: -14px auto 95px;
+      }
+   }
+   .partner-blok{
+      width: 235px;
+      height: 259px;
+      margin: 0 10px;
+      padding-bottom: 34px;
+   }
+   .ideas {
+      &__extreme {
+         padding: 130px 15px;
+      }
+      &__sports, &__heals {
+         padding: 130px 15px;
+         line-height: 26px;
+      }
+      &__enjoi, &__trevelling {
+         background-position: left;
+      }
+   }
+   footer .main-width {
+      max-width: calc(100% - 80px);
+   }
+   .footer-blok{
+      &__logo {
+         width: 32%;
+      }
+      &__company {
+         width: 26%;
+      }
+      &__partners {
+         width: 21%;
+      }
+      &__developer {
+         width: 21%;
+      }
+   }
+} 
+@media screen and (max-width: 620px) {
+   header {
+      height: 540px;
+      padding: 20px 0;
+      margin-bottom: 35px;
+      background-image: url('../images/Background_mini.png');
+   }
+   .conteiner {
+      display: flex;
+      flex-direction: column-reverse;
+      align-items: center;
+   }
+   .logo {
+      margin-left: 0;
+      margin-top: 97px;
+   }
+   .autorization {
+      &__signup {
+         margin-right: 0;
+      }
+   }
+   .top-content {
+      width: 92%;
+      height: 36%;
+      margin: 31px auto;
+      text-align: center;
+      &__title {
+         font: {
+            size: 30px;
+         }
+         line-height: 36px;
+         margin-top: 0px;
+         margin-bottom: 8px;
+      }
+      &__description {
+         font: {
+            size: 18px;
+         }
+         line-height: 24px;
+         margin-bottom: 14px;
+      }
+      &__link {
+         @include box(280px, 40px, 40px, $main-backgraund-color);
+      }
+   }
+   .main_title {
+      margin-bottom: 0;
+   }
+   .steps {
+      flex-direction: column;
+      margin-top: 10px;
+      margin-bottom: 32px;
+   }
+   .blok-step {
+      width: 100%;
+      height: 240px;
+      padding: 15px 30px 15px 20px;
+      margin: 5px 0;
+      &__ikon-centr {
+         margin-bottom: 28px;
+      }
+   }
+   .partners {
+      margin-top: 15px;
+      &__wrapper {
+         padding: 0;
+      }
+      &__all-partners {
+         margin: 17px auto 35px;
+         @include box(280px, 40px, 40px, transparent);
+      }
+   }
+   .partner-blok {
+      width: 78%;
+      height: 100%;
+      margin: 0;
+      padding-bottom: 17px;
+   }
+   .ideas-title {
+      padding: 0 30px;
+   }
+   .ideas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px; 
+      margin-top: 35px;   
+      margin-bottom: 35px;
+      & > * {
+         width: 100%;
+         height: 120px;
+         padding: 0;
+         line-height: 27px; 
+         padding: 47px 0 0;
+      }
+      &__sports {
+         background-image: url('../images/Sport_m.png');
+         padding: 20px 47px 0;
+      }
+      &__heals {
+         background-image: url('../images/Healath_m.png');
+         padding: 33px 47px 0;
+      }
+      &__extreme {
+         background-image: url('../images/Extreme_m.png');
+         padding: 32px 47px 0;
+      }
+      &__games {
+         background-image: url('../images/Games_m.png');
+      }
+      &__culture {
+         background-image: url('../images/Culture_m.png');  
+      }
+      &__enjoi {
+         background-image: url('../images/Enjomet_m.png');  
+      }
+      &__trevelling {
+         background-image: url('../images/Traveling_m.png');  
+      }
+   }
+   .form {
+      &__title {
+        margin-top: 18px;
+      }
+      .conteiner {
+         width: 280px;
+         height: 90px;
+         flex-direction: column;
+         margin: 15px auto 40px;
+      }
+      &__search {
+         width: 280px; 
+      }
+      &__button {
+         @include box(280px, 40px, 40px, $main-backgraund-color);
+         padding-left: 87px;
+      }
+   }
+   .footer-blok{
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      margin-top: 22px;
+      & >* {
+         width: 100%;
+      } 
+      &__company {
+         margin-top: 14px;
+         margin-bottom: 6px;
+         li {
+            display: inline-block;
+            padding: 0 5px;
+         }
+         p{
+            margin-bottom: 2px;
+         }
+      }
+      
+      &__developer {
+        text-align: center; 
+         margin-top: 16px;
+        img {
+         margin-top: 7px;
+         }
+      }
+   } 
+}
